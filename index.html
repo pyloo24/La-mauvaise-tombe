@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000"><meta name="description" content="La mauvaise tombe. Une enquête de Joël Rakoto. Écoutez l’histoire et choisissez la suite.">
+<title>La mauvaise tombe · Fiction audio</title>
+<link rel="icon" href="data:,"><link rel="stylesheet" href="./reader.css"><script type="module" src="./reader.js"></script>
+</head>
+<body>
+<main class="stage">
+<header class="identity"><h1>La mauvaise tombe</h1><p>Une enquête de Joël Rakoto</p></header>
+<section id="welcome" class="overlay" aria-labelledby="welcome-title">
+<div class="welcome-copy"><p class="eyebrow">Une fiction audio interactive</p><h2 id="welcome-title">La mauvaise tombe</h2><p>Une enquête de Joël Rakoto</p><p class="invitation">Écoutez l’histoire.<br>Quand elle vous laisse le choix, prenez une direction.</p>
+<button id="start" class="circle start" disabled aria-label="Commencer l’histoire">▶</button><p id="start-label">Chargement de l’histoire…</p><p class="fine">Au casque, si vous le souhaitez.<br>Votre progression est conservée dans ce navigateur.</p><p id="load-error" role="alert"></p></div>
+</section>
+<div id="experience" class="controls" hidden>
+<p id="chapter" class="chapter"></p>
+<section id="decision" aria-labelledby="decision-title" hidden><h2 id="decision-title" tabindex="-1">À vous de choisir</h2><ol id="choice-list"></ol></section>
+<p id="ending" class="ending" hidden>L’histoire s’achève ici.<br>Merci de votre écoute.</p>
+<p id="notice" class="notice" role="alert"></p>
+<div class="top-row"><div class="system"><button id="restart" class="circle small danger" aria-label="Recommencer l’histoire" title="Recommencer">×</button><button id="pause" class="circle small" aria-label="Écouter" title="Pause ou reprise">▶</button></div><p id="status" class="status" role="status" aria-live="polite">Prêt</p></div>
+<div class="progress-wrap"><input id="progress" class="progress" type="range" min="0" max="1" step=".1" value="0" aria-label="Position dans le passage"><span id="time" class="time">0:00 / 0:00</span></div>
+<div class="dpad" aria-label="Directions et écoute">
+<button id="up" class="circle direction up" aria-label="Choix devant" disabled><span class="symbol">▲</span><span class="label"></span></button>
+<button id="left" class="circle direction left" aria-label="Reculer de 15 secondes" disabled><span class="symbol">◀</span><span class="label">−15 s</span></button>
+<span class="mid" aria-hidden="true">·</span>
+<button id="right" class="circle direction right" aria-label="Avancer de 15 secondes" disabled><span class="symbol">▶</span><span class="label">+15 s</span></button>
+<button id="down" class="circle direction down" aria-label="Choix derrière" disabled><span class="symbol">▼</span><span class="label"></span></button>
+</div>
+<div class="bottom-row"><button class="text-button" id="transcript">Lire le passage</button><button class="text-button" id="report">Garder mon parcours</button></div>
+</div>
+</main>
+<dialog id="text-dialog"><div class="dialog-head"><h2 id="text-title">Le passage</h2><button id="close-text" class="text-button">Fermer</button></div><div id="transcript-copy"></div><button id="read-done" class="plain-button">Continuer le récit</button></dialog>
+<dialog id="restart-dialog"><h2>Recommencer l’histoire ?</h2><p>Un nouveau parcours remplacera votre progression dans ce navigateur.</p><button id="keep" class="plain-button">Poursuivre mon écoute</button><button id="confirm-restart" class="plain-button danger-text">Recommencer</button></dialog>
+<noscript>Activez JavaScript pour écouter l’histoire et faire vos choix.</noscript>
+</body>
+</html>

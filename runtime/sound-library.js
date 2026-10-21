@@ -1,0 +1,53 @@
+// Original procedural recordings, with stable IDs for later replacement.
+export const soundLibrary = [
+  ['room','Pièce calme · air et bâtiment','ambience',28,'room'],
+  ['office','Bureau · ventilation et appareils éloignés','ambience',28,'office'],
+  ['dental','Cabinet dentaire · ventilation douce','ambience',28,'dental'],
+  ['house','Maison habitée · bois et pendule','ambience',32,'house'],
+  ['empty_house','Maison vide · air et bois','ambience',32,'empty'],
+  ['hotel','Hôtel · couloir et bâtiment','ambience',28,'hotel'],
+  ['cafe','Café · vaisselle et salle, sans paroles','ambience',32,'cafe'],
+  ['hall','Salle de réunion · salle et mouvements','ambience',28,'hall'],
+  ['town','Petite ville · trafic lointain et oiseaux','ambience',36,'town'],
+  ['night','Extérieur nocturne · vent et insectes','ambience',36,'night'],
+  ['garage','Atelier · ventilation et moteurs sourds','ambience',32,'garage'],
+  ['quarry','Carrière active · vent et machines éloignées','ambience',36,'quarry'],
+  ['burned','Bâtiment incendié · vent et débris refroidis','ambience',36,'burned'],
+  ['car','Habitacle · roulement et moteur','ambience',32,'car'],
+  ['station','Gare · souffle ferroviaire et quai','ambience',36,'station'],
+  ['hospital','Soins · ventilation et couloir discret','ambience',28,'hospital'],
+  ['garden','Jardin · vent dans les feuilles et oiseaux','ambience',36,'garden'],
+  ['rain','Pluie · gouttes contre une vitre','ambience',36,'rain'],
+  ['fire','Feu · souffle et crépitements','ambience',32,'fire'],
+  ['door_open','Porte · poignée et ouverture','effect',1.7,'door_open'],
+  ['door_close','Porte · fermeture sourde','effect',1.2,'door_close'],
+  ['knock','Trois coups à une porte','effect',1.7,'knock'],
+  ['gate','Portail · loquet et métal','effect',2.2,'gate'],
+  ['steps','Quelques pas sur un sol dur','effect',3.1,'steps'],
+  ['gravel','Quelques pas sur le gravier','effect',3.2,'gravel'],
+  ['paper','Feuilles · prise et manipulation','effect',2.1,'paper'],
+  ['page','Une page tournée','effect',.85,'page'],
+  ['envelope','Enveloppe ouverte','effect',1.7,'envelope'],
+  ['phone','Sonnerie de téléphone','effect',2.6,'phone'],
+  ['vibration','Téléphone · vibration sur une table','effect',1.25,'vibration'],
+  ['message','Notification discrète','effect',.65,'message'],
+  ['keys','Trousseau de clés','effect',1.15,'keys'],
+  ['car_door','Portière et verrou','effect',1.3,'car_door'],
+  ['engine_start','Moteur · démarrage','effect',3.8,'engine_start'],
+  ['car_pass','Voiture qui passe','effect',5.2,'car_pass'],
+  ['brake','Freinage bref','effect',1.8,'brake'],
+  ['impact','Choc sourd','effect',.9,'impact'],
+  ['glass','Verre brisé','effect',1.8,'glass'],
+  ['cup','Tasse posée sur une table','effect',.8,'cup'],
+  ['chair','Chaise déplacée','effect',1.2,'chair'],
+  ['drawer','Tiroir ouvert puis arrêté','effect',1.5,'drawer'],
+  ['lock','Clé tournée dans une serrure','effect',1.1,'lock'],
+  ['camera','Prise de photographie discrète','effect',.6,'camera'],
+  ['train','Train au passage · grondement','effect',7,'train'],
+  ['sirens','Secours · sirène éloignée','effect',5.5,'sirens']
+].map(([id,label,kind,duration,texture])=>({id,label,kind,duration,texture}));
+export const defaultMix = { voice:1, ambience:.65, effects:.65, ducking:.45, crossfade:1.4 };
+
+export function defaultEntry(segment) {
+  return { voiceGain:1, layers:[], effects:[], before:0, after:(segment.pause_ms??350)/1000, silenceAfter:false };
+}
